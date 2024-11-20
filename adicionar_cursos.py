@@ -1,27 +1,21 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-# Inicializando o Flask
 app = Flask(__name__)
 
-# Configuração para usar o banco de dados já existente
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///alunos.db'  # Caminho do banco de dados existente
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///alunos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Modelo Curso
 class Curso(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
 
-# Modelo Materia
 class Materia(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
 
-# Função para adicionar cursos e matérias ao banco de dados
 def adiciona_curso_materia():
-    # Lista de cursos
     cursos = [
     "Administração", "Medicina", "Análise e Desenvolvimento de Sistemas", "Engenharia Civil", 
     "Direito", "Arquitetura", "Psicologia", "Educação Física", "Biologia", "Ciência da Computação", 
@@ -55,12 +49,10 @@ def adiciona_curso_materia():
         "Inglês", "Educação Física", "Sociologia", "Filosofia", "Artes"
     ]
 
-    # Aqui adiciona os cursos ao banco
     for curso_nome in cursos:
         curso = Curso(nome=curso_nome)
         db.session.add(curso)
     
-    # aqui as materias
     for materia_nome in materias:
         materia = Materia(nome=materia_nome)
         db.session.add(materia)
