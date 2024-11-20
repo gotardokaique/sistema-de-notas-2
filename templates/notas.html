@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Lançadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <a href="/" class="btn-voltar">Voltar</a>
+
+</head>
+<body>
+    <h1>Notas Lançadas</h1>
+    <ul>
+        {% if notas %}
+            {% for nota in notas %}
+                <li>{{ nota.aluno.nome }} - {{ nota.materia.nome }}: {{ nota.valor }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Nenhuma nota lançada</li>
+        {% endif %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="/" class="btn-voltar">Voltar</a>
+    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha um curso</h1>
+        <form method="POST" action="{{ url_for('cursos') }}">
+            <label for="curso_id">Pesquisar curso:</label>
+            <select name="curso_id" id="curso_id" required>
+                <option value="">Selecione um curso</option>
+                {% for curso in cursos %}
+                    <option value="{{ curso.id }}">{{ curso.nome }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Exibir Alunos">
+        </form>
+        {% if alunos_curso_fazer is none %}
+            <p><strong>Nenhum aluno encontrado para este curso.</strong></p>
+        {% elif alunos_curso_fazer %}
+            <h2>Alunos no curso</h2>
+            <table class="tabela-notas">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Email</th>  
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aluno in alunos_curso_fazer %}
+                        <tr>
+                            <td>{{ aluno.nome }}</td>
+                            <td>{{ aluno.telefone }}</td>
+                            <td>{{ aluno.email }}</td>  
+                            <td>{{ aluno.cidade }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>

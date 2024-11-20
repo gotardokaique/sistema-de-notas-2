@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançar Nota</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="/" class="btn-voltar">Voltar</a>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+<body>
+    <div class="container">
+        <h1>Lançar nota</h1>
+        
+        <form method="POST" action="/lancar_nota">
+            <label for="aluno">Aluno:</label>
+            <select id="aluno" name="aluno" required>
+                {% for aluno in alunos %}
+                <option value="{{ aluno.id }}">{{ aluno.nome }}</option>
+                {% endfor %}
+            </select><br>
+            
+            <label for="materia">Matéria:</label>
+            <select id="materia" name="materia" required>
+                {% for materia in materias %}
+                <option value="{{ materia.id }}">{{ materia.nome }}</option>
+                {% endfor %}
+            </select><br>
+            
+            <label for="nota">Nota:</label>
+            <input type="text" id="nota" name="nota" required><br>
+            
+            <input type="submit" value="Lançar Nota">
+        </form>
+        
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="alert {{ messages[0][0] }} fade-in">
+                        {{ messages[0][1] }}
+                    </div>
+                {% endif %}
+                {% endwith %}
+    </div>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                let alertBox = document.querySelector('.alert');
+                if (alertBox) {
+                    alertBox.classList.add('fade-out');
+                }
+            }, 5000);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, sans-serif;
+    margin:  10px 250px 10px 250px;
+    padding: 20px;
+    background-color: #bababa;
+    text-align: center;
+    font-family: 'Faculty Glyphic', serif;
+}
+.tela-inicial {
+background-color: #ffffff;
+}
+footer {
+    position: absolute;
+    bottom: 50px;
+    text-align: justify;
+    left: 50px;
+    font-size: 1rem;
+    color: #003366;
+}
+
+h1 {
+    color: #010101;
+    margin: 0px 20px 0px 20px;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+form {
+    display: flexbox;
+    text-align: justify;
+    background-color: #dbdbdb;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 8px rgb(0, 0, 0);
+}
+
+label {
+    font-weight: bold;
+    margin-top: 0px;
+    display: grid;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 9px;
+    margin: 3px 5px 10px 0px;
+    border: 1px solid #000000;
+    border-radius: 40px;
+    font-family: 'Faculty Glyphic', serif;
+}
+a.btn {
+    display: inline-table;
+    padding: 10px 20px 10px 10px;
+    margin: 5px;
+    background-color: #003366;
+    color: #fff;
+    border: 2px solid #ffffff;
+    font-size: 18px;
+    text-decoration: none; 
+    transition: 0.3s ease;
+    border-radius: 7px;
+}
+a.btn:hover{
+    background-color: #0835be;
+}
+a.btn:active{
+    transform: scale(0.8); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+table {
+    width: 10%;
+    margin: 0px 2px 2px 0px; 
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: center;
+}
+
+th, td {
+    padding: 6px 10px 0px 20px; 
+    border: 1px solid #717171;
+}   
+
+th {
+    background-color: #170591; 
+    color: white; 
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color:   #d1d1d1;
+}
+
+tr:hover {
+    background-color:   #bababa;
+}
+
+td {
+    text-align: justify ; 
+    word-wrap: normal;
+}   
+
+.tabela-notas {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.tabela-notas th, .tabela-notas td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabela-notas th {
+    background-color: #050b83;
+}
+
+.tabela-notas td {
+    font-size: 20px 20px 20px 20px;
+}
+
+.alert {
+    display: none; 
+    position: fixed;
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #2372d8;
+    color: white;
+    padding: 15px 30px; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 6px rgba(248, 247, 247, 0.1); 
+    z-index: 1000; 
+    animation: fadeIn 0.5s ease-in-out; 
+}
+
+.alert.success {
+    background-color: #4aa43e;
+    color: white;
+}
+
+.alert.error {
+    background-color: #f44336;  
+    color: white;
+}
+
+.alert.warning {
+    background-color: #ff9800; 
+    color: white;
+}
+
+.fade-in {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+    opacity: 0;
+    display: none;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.btn-voltar {
+    position: fixed;
+    top: 10px;
+    left: 40px;
+    color: #ffffff;
+    padding: 10px 15px;
+    background-color: #073489;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none; 
+    box-shadow: 0 4px 8px rgba(234, 232, 232, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #0b14c6;
+}
+a.btn-voltar:active     {
+    transform: scale(0.8); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}   
+input[type="text"]#telefone {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #717171;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+input[type="submit"]{
+    width: 18%;
+    background-color: #05055e;
+    padding: 8px;
+    color: #dbdbdb;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgb(84, 85, 85);
+}

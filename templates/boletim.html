@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim de {{ aluno.nome }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="/" class="btn-voltar">Voltar</a>
+
+</head>
+<body>
+    <h1>Boletim de {{ aluno.nome }}</h1>
+    <p>Matrícula: {{ aluno.matricula }}</p>
+    <h3>Notas:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Matéria</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+            <tr>
+                <td>{{ nota.materia.nome }}</td>
+                <td>{{ nota.valor }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2">Nenhuma nota registrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

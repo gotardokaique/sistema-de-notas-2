@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+    
+</head>
+<body class="tela-inicial">
+    <div class="container">
+        <h1>Sistema de notas</h1>
+        <div class="menu">
+            <a href="/cadastrar" class="btn">Cadastrar aluno</a>
+            <a href="/lancar_nota" class="btn">Lançar notas</a>
+            <a href="/gerar_pdf_boletim" class="btn">Gerar boletim</a>
+            <a href="/cadastrar_materia" class="btn">Cadastrar matéria</a>
+            <a href="{{ url_for('cadastrar_curso') }}" class="btn">Cadastrar curso</a>
+            <!--a href="/notas" class="btn">Ver Notas</a-->
+            <!--a href="/gerar_boletim" class="btn">Gerar Boletim</a-->
+        </body>
+    </div>
+    <footer>
+        <a href="/alunos" class="btn">Alunos</a>
+        <a href="/cursos" class="btn">Cursos</a>
+        <p>Versão 1.31</p>
+        <p>@kaiquegotardo</p>   
+        <p>@...</p>   
+    </footer>
+</div>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim do aluno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .boletim {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+        .aluno-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .notas {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .notas th, .notas td {
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        .notas th {
+            background-color: #f0f0f0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boletim">
+        <h1>Boletim de notas</h1>
+        <div class="aluno-info">
+            <p><strong>Nome:</strong> {{ aluno.nome }}</p>
+            <p><strong>Curso:</strong> {{ aluno.curso.nome }}</p>
+            <p><strong>Matrícula:</strong> {{ aluno.matricula }}</p>
+        </div>
+
+        <h2>Notas</h2>
+        <table class="notas">
+            <thead>
+                <tr>
+                    <th>Matéria</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nota in notas %}
+                    <tr>
+                        <td>{{ nota.materia.nome }}</td>
+                        <td>{{ nota.valor }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="2">Nenhuma nota registrada.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>

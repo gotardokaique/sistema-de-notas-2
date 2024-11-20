@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar curso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="/" class="btn-voltar">Voltar</a>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+<body>
+    <h1>Cadastrar curso</h1>
+
+    <form method="POST">
+        <label for="nome">Nome do curso:</label>
+        <input type="text" id="nome" name="nome" required><br>
+
+        <button type="submit">Cadastrar Curso</button>
+    </form>
+
+    <br>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="alert {{ messages[0][0] }} fade-in">
+            {{ messages[0][1] }}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            let alertBox = document.querySelector('.alert');
+            if (alertBox) {
+                alertBox.classList.add('fade-out');
+            }
+        }, 5000); // Desaparece após 5 segundos
+    };
+</script>
+</body>
+</html>
