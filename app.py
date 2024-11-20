@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///alunos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
   
 
-app.secret_key = 'kaiqueinvenrachave'
+app.secret_key = 'kaiqueinventachavealeatoria'
 db = SQLAlchemy(app)
 with app.app_context():
     db.create_all()
